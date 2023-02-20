@@ -15,18 +15,20 @@ function App() {
   return (
     <>
       <Router>
-        <Header/>
+        <Header />
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/profile" element={<PrivateRoute/>}>
-            <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/profile" element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />}></Route>
           </Route>
-          <Route path="/sign-in" element={<SignIn/>}></Route>
-          <Route path="/sign-up" element={<SignUp/>}></Route>
-          <Route path="/forgot-password" element={<ForgotPassword/>}></Route>
-          <Route path="/offers" element={<Offers/>}></Route>
-          <Route path="/create-listing" element={<CreateListing/>}></Route>
-        </Routes>
+          <Route path="/sign-in" element={<SignIn />}></Route>
+          <Route path="/sign-up" element={<SignUp />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/offers" element={<Offers />}></Route>
+          <Route path="create-listing" element={<PrivateRoute />}>
+            <Route path="/create-listing" element={<CreateListing />}/>
+          </Route>
+          </Routes>
       </Router>
       <ToastContainer
         position="bottom-center"
@@ -40,7 +42,6 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-      
     </>
   );
 }
