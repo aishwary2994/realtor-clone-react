@@ -13,6 +13,8 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
+
+
 export default function CreateListing() {
   const navigate = useNavigate();
   const auth = getAuth();
@@ -389,7 +391,7 @@ export default function CreateListing() {
               />
               {type === "rent" && (
                 <div className="">
-                  <p className="text-md w-full whitespace-nowrap">$ / Month</p>
+                  <p className="text-md w-full whitespace-nowrap">₹/ Month</p>
                 </div>
               )}
             </div>
@@ -413,7 +415,7 @@ export default function CreateListing() {
                 {type === "rent" && (
                   <div className="">
                     <p className="text-md w-full whitespace-nowrap">
-                      $ / Month
+                    ₹/ Month
                     </p>
                   </div>
                 )}
